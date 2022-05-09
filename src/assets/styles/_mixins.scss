@@ -1,0 +1,13 @@
+@import '_variables';
+
+@mixin section {
+  box-sizing: border-box;
+  padding: 2rem;
+  background-color: $bg-color2;
+  font-family: $font-fam;
+}
+
+
+@mixin heading-section {
+
+}
