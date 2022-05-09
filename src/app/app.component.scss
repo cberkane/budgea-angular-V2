@@ -1,0 +1,33 @@
+@import '_variables';
+
+#app-container {
+  min-height: $screen-height;
+  background-color: #fff;
+
+  mat-drawer {
+    background-color: $bg-color1;
+    color:  $font-color1;
+    width: 13%;
+  }
+
+  mat-drawer-content {
+    display: flex;
+    box-sizing: border-box;
+    height: 100%;
+
+    .side-menu {
+      background-color: $bg-color1;
+      height: $screen-height;
+      width: 5rem;
+      color: $font-color1;
+      border-right: 1px solid $shadow-color1;
+    }
+
+    .main-content {
+      width: 100% ;
+      height: $screen-height;
+      background-color: $bg-color2;
+      color: $font-color1;
+    }
+  }
+}
