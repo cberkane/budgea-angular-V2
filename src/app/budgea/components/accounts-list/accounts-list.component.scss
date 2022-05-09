@@ -1,0 +1,35 @@
+@import '_variables';
+@import '_mixins';
+
+#accounts {
+  @include section;
+
+  h2 {
+    font-family: $font-fam;
+  }
+}
+
+//  TODO: duplicated code, see transaction component
+.container  {
+  box-sizing: content-box;
+  padding: 3rem 0;
+  font-family: $font-fam;
+
+  .table, .table-paginator {
+    width: 80%;
+    margin: 0 auto;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  .table-header {
+    text-align: center;
+    font-size: $title-size-m;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,20 @@
+<section id="connections">
+  <h2>Connexions ajoutées</h2>
+
+  <!-- Display loading -->
+  <ng-container *ngIf="connectionsLoading">
+    <app-loading></app-loading>
+  </ng-container>
+
+  <!-- Display data -->
+  <ng-container *ngIf="connections$ | async as connections">
+    <div class="container">
+      <small>Nombre total de connexions {{connections.total}} </small>
+      <div class="flex-cards">
+        <div class="flex-card" *ngFor="let item of connections.connections">
+          <h3>{{item.connector.name}}</h3>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>

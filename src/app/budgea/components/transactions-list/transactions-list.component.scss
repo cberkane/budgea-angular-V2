@@ -1,0 +1,33 @@
+@import '_variables';
+@import '_mixins';
+
+
+#transactions {
+  @include section;
+
+  h2 {
+    font-family: $font-fam;
+  }
+}
+
+.container  {
+  box-sizing: content-box;
+  padding: 3rem 0;
+
+  .table, .table-paginator {
+    width: 80%;
+    margin: 0 auto;
+    table {
+      width: 100%;
+    }
+  }
+
+  .table-header {
+    text-align: center;
+    font-size: $title-size-m;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,45 @@
+<section id="accounts">
+  <h2>Comptes de connexion</h2>
+
+  <!-- Display loading -->
+  <ng-container *ngIf="accountsLoading">
+    <app-loading></app-loading>
+  </ng-container>
+
+  <!-- Display data -->
+  <div class="container">
+    <div class="table" *ngIf="accounts$ | async as accounts">
+      <div class="table-header">
+        <h3>
+          Balance de compte <span class="left">{{ accounts.balance }}</span>
+        </h3>
+        <small>Nombre de comptes associés {{ accounts.total }}</small>
+      </div>
+
+      <div class="table-body">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Position Column -->
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type de compte</th>
+            <td mat-cell *matCellDef="let account">{{ account.type }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="balance">
+            <th mat-header-cell *matHeaderCellDef>Solde</th>
+            <td mat-cell *matCellDef="let account">{{ account.balance }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="currency">
+            <th mat-header-cell *matHeaderCellDef>Devise</th>
+            <td mat-cell *matCellDef="let account">{{ account.currency.id }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+    <mat-paginator class="table-paginator"[ngClass]="{ hidden: accountsLoading }" [pageSize]="5"></mat-paginator>
+  </div>
+
+</section>
