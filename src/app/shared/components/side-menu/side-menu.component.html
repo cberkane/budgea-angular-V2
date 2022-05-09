@@ -1,0 +1,33 @@
+<div class="side-menu" [ngClass]="{'small': small}">
+
+  <!-- Header -->
+  <div class="side-menu-header">
+    <button class="side-menu-toggler" mat-icon-button (click)="emitToggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <!-- Body -->
+  <div class="side-menu-body">
+    <ul>
+      <li *ngFor="let item of items">
+        <a routerLink="{{item.route}}" matRipple matRippleColor="rgba(1,1,1,0.2)">
+          <mat-icon>{{item.icon}}</mat-icon>
+          <ng-container *ngIf="!small">
+            <span> {{item.label}} </span>
+          </ng-container>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="side-menu-footer">
+    <a href="{{webviewUrl}}">
+      <img src="https://axeptio.imgix.net/2022/02/57b4fbdc-c587-42a4-acbc-56023b9dd53d.png?auto=format&fit=crop&w=50&h=auto&dpr=1">
+      <ng-container *ngIf="!small">
+        <span> Webview </span>
+      </ng-container>
+    </a>
+  </div>
+</div>
